@@ -1,38 +1,40 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>Redirect</title>
+    <meta charset="UTF-8">
+    <title>פתיחת טופס</title>
 </head>
 
 <body>
 
+<h1 style="text-align:center;margin-top:100px;">
+    פותח טופס...
+</h1>
+
 <script>
 
-window.open(
-    "https://www.matara.pro/nedarimplus/online/?mosad=7016834",
-    "_blank"
-);
+window.location.href =
+"https://www.matara.pro/nedarimplus/online/?mosad=7016834";
 
-setTimeout(() => {
+function autoClick() {
 
-    try {
+    const btn = document.getElementById("NewGroupe0");
 
-        document.getElementById("NewGroupe0")?.click();
+    if (btn) {
 
-    } catch(e) {
+        btn.click();
 
-        console.log(e);
+        console.log("Clicked");
 
+    } else {
+
+        setTimeout(autoClick, 1000);
     }
+}
 
-}, 3000);
+setTimeout(autoClick, 3000);
 
 </script>
-
-<h1 style="text-align:center;margin-top:100px;">
-פותח טופס...
-</h1>
 
 </body>
 </html>
